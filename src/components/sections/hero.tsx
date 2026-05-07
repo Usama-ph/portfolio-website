@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Mail, Terminal } from "lucide-react";
-import { GithubIcon, LinkedinIcon, InstagramIcon } from "@/components/social-icons";
+import { GithubIcon, LinkedinIcon, InstagramIcon, WhatsAppIcon } from "@/components/social-icons";
 
 const floatingBadges = [
   { label: "TypeScript", x: "3%", y: "18%", delay: 0 },
@@ -165,6 +165,15 @@ export default function HeroSection() {
                 aria-label="Email"
               >
                 <Mail className="w-5 h-5" />
+              </a>
+              <a
+                href="https://wa.me/923234465860"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-xl bg-zinc-800/60 border border-zinc-700/50 flex items-center justify-center text-zinc-400 hover:text-[#25D366] hover:border-zinc-600 transition-all hover:scale-110"
+                aria-label="WhatsApp"
+              >
+                <WhatsAppIcon className="w-5 h-5" />
               </a>
             </motion.div>
           </div>
