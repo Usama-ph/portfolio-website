@@ -1,9 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 import { WhatsAppIcon } from "@/components/social-icons";
+import { cn } from "@/lib/utils";
 
 export default function WhatsAppFloat() {
+  const pathname = usePathname();
+  const onContact = pathname === "/contact";
+
   return (
     <motion.a
       href="https://wa.me/923234465860"
@@ -15,7 +20,11 @@ export default function WhatsAppFloat() {
       transition={{ delay: 1.2, type: "spring", stiffness: 260, damping: 20 }}
       whileHover={{ scale: 1.12 }}
       whileTap={{ scale: 0.95 }}
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg shadow-black/30 hover:shadow-[#25D366]/40 hover:shadow-xl transition-shadow"
+      className={cn(
+        "fixed right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg shadow-black/30 hover:shadow-[#25D366]/40 hover:shadow-xl transition-shadow",
+        // Clear space for Eleven Labs widget on Contact
+        onContact ? "bottom-24" : "bottom-6",
+      )}
     >
       {/* Pulse ring */}
       <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30" />

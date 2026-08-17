@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import AnimatedBackground from "@/components/animated-background";
 import ContactClient from "@/components/sections/contact-client";
+import ElevenLabsVoiceAgent from "@/components/elevenlabs-voice-agent";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -13,6 +14,7 @@ export default function ContactPage() {
     <>
       <AnimatedBackground />
       <ContactClient />
+      <ElevenLabsVoiceAgent />
     </>
   );
 }
