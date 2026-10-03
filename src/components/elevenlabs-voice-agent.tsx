@@ -19,7 +19,7 @@ const WIDGET_SCRIPT =
 
 export default function ElevenLabsVoiceAgent() {
   const agentId = parseElevenLabsAgentId(
-    process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_URL,
+    process.env.NEXT_ELEVENLABS_AGENT_URL,
   );
 
   if (!agentId) return null;
