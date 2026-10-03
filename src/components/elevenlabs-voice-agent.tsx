@@ -1,7 +1,6 @@
 "use client";
 
 import Script from "next/script";
-import { parseElevenLabsAgentId } from "@/lib/elevenlabs";
 
 declare module "react" {
   namespace JSX {
@@ -17,11 +16,11 @@ declare module "react" {
 const WIDGET_SCRIPT =
   "https://unpkg.com/@elevenlabs/convai-widget-embed";
 
-export default function ElevenLabsVoiceAgent() {
-  const agentId = parseElevenLabsAgentId(
-    process.env.NEXT_ELEVENLABS_AGENT_URL,
-  );
-
+export default function ElevenLabsVoiceAgent({
+  agentId,
+}: {
+  agentId: string | null;
+}) {
   if (!agentId) return null;
 
   return (
